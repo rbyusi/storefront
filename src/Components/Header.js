@@ -1,4 +1,5 @@
-const Header = () => {
+const Header = ({CartItems, onAddItem}) => {
+  const itemNumber = CartItems.length
   return (
     <div className="Header">
       <span>
@@ -12,7 +13,7 @@ const Header = () => {
           <li>More</li>
         </ul>
       </span>
-      <span id="Cart">My Cart (0)</span>
+      <span id="Cart">{`My Cart (${itemNumber})`}</span>
     </div>
   );
 };

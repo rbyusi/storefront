@@ -85,6 +85,9 @@ video {
   font-size: 100%;
   font: inherit;
 }
+h2{
+  color: grey;
+}
 
 body {
   height: 100%;
@@ -96,6 +99,8 @@ body {
   justify-items:center;
   flex-direction: column;
 }
+
+
 
 .Header {
   display: flex;
@@ -130,12 +135,18 @@ body {
   height: 400px;
 }
 
+.BreadCrumb {
+  display: flex;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
 .BannerBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 30%;
   color: white;
   background-color: rgb(49, 47, 47);
   height: inherit;
@@ -170,9 +181,27 @@ body {
   
 }
 
+#ViewItem {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+}
+
+
+#ViewItem h1{
+  font-size: 3.5em;
+}
+
+#ViewImage{
+  padding-right: 2em;
+}
+
 .Item {
   text-align: center;
-  padding-bottom: 4em;
+  padding-bottom: 5em;
 }
 
 .Item img {
@@ -235,4 +264,29 @@ body {
 
 .ImageContainer {
   position: relative;
+}
+
+#Quantity{
+  position: relative;
+  margin-top: .5em;
+  width: 80px;
+  height: 100%;
+
+
+}
+#Quantity button{
+  position: absolute;
+  left: 80px;
+  font-size: 13px;
+  bottom: 10px;
+  
+}
+
+#Count{
+  position: absolute;
+  padding: 15px 15px;
+  font-size: 16px;
+  background-color: rgb(209, 208, 208);
+  margin: 0;
+  display: inline-block;
 }

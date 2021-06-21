@@ -1,19 +1,21 @@
-import Items from "./Items";
-
-const Item = ({ Item }) => {
+const Item = ({ product, onAddItem, onViewItem }) => {
   return (
     //image,brand,title,price
     <div className="Item">
       <div className="ImageContainer">
-        <img src={Item.image} alt={Items.title}></img>
+        <img src={product.image} alt={product.title}></img>
         <div className="Overlay">
-            <div><button>View Details</button></div>
-            <div><button>Add to Cart</button></div>
+          <div>
+            <button onClick={()=>onViewItem(product.id)}>View Details</button>
+          </div>
+          <div>
+            <button onClick={()=>onAddItem(product)}>Add to Cart</button>
+          </div>
         </div>
       </div>
-      <h4>{Item.brand}</h4>
-      <h4>{Item.title}</h4>
-      <h4>$ {Item.price}</h4>
+      <h4>{product.brand}</h4>
+      <h4>{product.title}</h4>
+      <h4>$ {product.price}</h4>
     </div>
   );
 };

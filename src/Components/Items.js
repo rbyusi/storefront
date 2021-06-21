@@ -1,10 +1,31 @@
 import Item from "./Item";
-const Items = ({ Products }) => {
+import SelectedItem from "./SelectedItem";
+
+const Items = ({
+  Products,
+  CartItems,
+  onAddItem,
+  onViewItem,
+  isItemSelected,
+  ViewItem,
+}) => {
   return (
-    <div id="Items">
-      {Products.map((item, index) => (
-        <Item key={index} Item={item} />
-      ))}
+    <div id={isItemSelected ? "ViewItem" : "Items"}>
+      {isItemSelected ? (
+        <SelectedItem 
+            ViewItem={ViewItem} 
+            CartItems={CartItems} 
+        />
+      ) : (
+        Products.map((product) => (
+          <Item
+            key={product.id}
+            product={product}
+            onAddItem={onAddItem}
+            onViewItem={onViewItem}
+          />
+        ))
+      )}
     </div>
   );
 };
