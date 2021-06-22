@@ -1,4 +1,4 @@
-const Item = ({ product, onAddItem, onViewItem }) => {
+const Item = ({ product, onAddItem, onViewItem, CartItems }) => {
   return (
     //image,brand,title,price
     <div className="Item">
@@ -6,10 +6,10 @@ const Item = ({ product, onAddItem, onViewItem }) => {
         <img src={product.image} alt={product.title}></img>
         <div className="Overlay">
           <div>
-            <button onClick={()=>onViewItem(product.id)}>View Details</button>
+            <button onClick={() => onViewItem(product.id)}>View Details</button>
           </div>
           <div>
-            <button onClick={()=>onAddItem(product)}>Add to Cart</button>
+            <button onClick={() => onAddItem(product)}>Add to Cart</button>
           </div>
         </div>
       </div>

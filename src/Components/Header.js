@@ -1,5 +1,5 @@
-const Header = ({CartItems, onAddItem}) => {
-  const itemNumber = CartItems.length
+const Header = ({CartItems, backToItems}) => {
+  const itemNumber = CartItems.reduce((a,v) =>a = a + v.quantity ,0)
   return (
     <div className="Header">
       <span>
@@ -8,7 +8,7 @@ const Header = ({CartItems, onAddItem}) => {
       <span className="Links">
         <ul>
           <li>Home</li>
-          <li>Shop</li>
+          <li onClick={()=>backToItems()}>Shop</li>
           <li>Journal</li>
           <li>More</li>
         </ul>

@@ -1,6 +1,5 @@
 import Item from "./Item";
 import SelectedItem from "./SelectedItem";
-
 const Items = ({
   Products,
   CartItems,
@@ -12,9 +11,10 @@ const Items = ({
   return (
     <div id={isItemSelected ? "ViewItem" : "Items"}>
       {isItemSelected ? (
-        <SelectedItem 
-            ViewItem={ViewItem} 
-            CartItems={CartItems} 
+        <SelectedItem
+          ViewItem={ViewItem}
+          CartItems={CartItems}
+          onAddItem={onAddItem}
         />
       ) : (
         Products.map((product) => (
@@ -23,6 +23,7 @@ const Items = ({
             product={product}
             onAddItem={onAddItem}
             onViewItem={onViewItem}
+            CartItems={CartItems}
           />
         ))
       )}

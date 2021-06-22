@@ -85,7 +85,11 @@ video {
   font-size: 100%;
   font: inherit;
 }
-h2{
+
+h1 {
+  font-size: 4em;
+}
+h2 {
   color: grey;
 }
 
@@ -96,11 +100,9 @@ body {
 #Container {
   display: flex;
   align-items: center;
-  justify-items:center;
+  justify-items: center;
   flex-direction: column;
 }
-
-
 
 .Header {
   display: flex;
@@ -120,6 +122,11 @@ body {
 
 .Header ul li {
   display: inline-block;
+  cursor: pointer;
+}
+
+.Header ul li:hover {
+  text-decoration: underline;
 }
 
 .Header ul li:not(last-child) {
@@ -130,15 +137,22 @@ body {
   display: flex;
   flex-direction: column;
   background: url(./Images/plates-header.jpg) no-repeat center;
-  align-items:center;
+  align-items: center;
   width: 100%;
   height: 400px;
 }
 
 .BreadCrumb {
   display: flex;
-  margin-top: 4em;
+  justify-content: center;
+
   margin-bottom: 4em;
+  border-top: solid rgb(219, 214, 214) 1px;
+  width: 1600px;
+}
+
+.BreadCrumb div {
+  margin-top: 3em;
 }
 
 .BannerBox {
@@ -151,51 +165,48 @@ body {
   background-color: rgb(49, 47, 47);
   height: inherit;
   border: solid white;
-  border-width: 0rem .80em;
+  border-width: 0rem 0.8em;
 }
 
 .BannerBox h1 {
   font-size: 3rem;
-  display:inline-block;
+  display: inline-block;
   border-bottom: 2px solid white;
-  padding-bottom: .3rem;
-  margin-bottom: .5rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .BannerBox p {
   margin: 0 3rem 0 3rem;
 }
 
-#Cart{
-  padding-right: .86em;
+#Cart {
+  padding-right: 0.86em;
 }
 
-#Items{
-
+#Items {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 60px;
   width: 1100px;
-  
 }
 
 #ViewItem {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    width: 60%;
-    height: 100%;
-    text-align: center;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  width: 1100px;
+  height: 100%;
+  text-align: center;
 }
 
-
-#ViewItem h1{
+#ViewItem h1 {
   font-size: 3.5em;
 }
 
-#ViewImage{
+#ViewImage {
   padding-right: 2em;
 }
 
@@ -205,22 +216,21 @@ body {
 }
 
 .Item img {
-  
   height: 215px;
   width: 326px;
   padding-bottom: 1em;
   display: block;
   opacity: 1;
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
   backface-visibility: hidden;
 }
 
 .Item h4 {
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
 }
 
 .Overlay {
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -247,18 +257,18 @@ body {
   cursor: pointer;
 }
 
-.Overlay button:first-child{
+.Overlay button:first-child {
   margin-bottom: 1em;
   background-color: #202020;
 }
 
-.Overlay button:hover{
+.Overlay button:hover {
   background-color: #5b5c5b;
   color: #202020;
-  transition: .2s ease-in-out
+  transition: 0.2s ease-in-out;
 }
 
-.Overlay div:target{
+.Overlay div:target {
   display: block;
 }
 
@@ -266,27 +276,92 @@ body {
   position: relative;
 }
 
-#Quantity{
+#Quantity {
   position: relative;
-  margin-top: .5em;
+  margin-top: 0.5em;
   width: 80px;
   height: 100%;
-
-
 }
-#Quantity button{
+#Quantity button {
   position: absolute;
   left: 80px;
   font-size: 13px;
-  bottom: 10px;
-  
 }
 
-#Count{
+#Count {
   position: absolute;
   padding: 15px 15px;
   font-size: 16px;
   background-color: rgb(209, 208, 208);
   margin: 0;
   display: inline-block;
+}
+
+.Cart {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.CartItems {
+  margin-top: 5em;
+  width: 1100px;
+}
+
+.Headers {
+  display: grid;
+}
+
+.Product {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.Quantity {
+  grid-column-start: 4;
+  justify-self: center;
+  align-self: baseline;
+  grid-row-start: row1;
+  grid-row-end: row3-start;
+}
+.Total {
+  grid-column-start: 5;
+  justify-self: center;
+  align-self: baseline;
+  grid-row-start: row1;
+  grid-row-end: 3;
+}
+.Action {
+  grid-column-start: 6;
+  justify-self: center;
+  align-self: baseline;
+  grid-row-start: row1;
+  grid-row-end: 3;
+}
+
+.ShoppingCartItems {
+  display: flex;
+  flex-direction: column;
+  margin-top: .5em;
+  
+}
+
+.ShoppingCartItems div{
+  border-top: rgb(228, 228, 228) solid .5px;
+  
+}
+.ShoppingCartItems img{
+  height: 80px;
+  width: 120px;
+}
+
+.CartOverView{
+  grid-column-start: 1;
+  grid-column-end: 7;
+}
+.CheckOut{
+  grid-column-start: 1;
+  grid-column-end: 7;
 }
