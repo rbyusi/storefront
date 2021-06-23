@@ -25,7 +25,6 @@ function App() {
   };
 
   const backToItems = () => {
-    console.log("here");
     setItemSelected((v) => false);
     toggleViewCart();
   };
@@ -51,7 +50,6 @@ function App() {
   const onRemoveItem = (product, remove) => {
     const itemExists = CartItems.find((item) => item.id === product.id);
     const removeItem = remove ? "yes" : "no";
-    console.log(removeItem);
     if (itemExists && removeItem === "no") {
       setCartItems(
         CartItems.map((item) =>
@@ -61,7 +59,6 @@ function App() {
         )
       );
     } else if (removeItem === "yes") {
-      console.log("here");
       setCartItems(CartItems.filter((item) => item.id !== product.id));
     }
   };
