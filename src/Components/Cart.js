@@ -1,7 +1,9 @@
 import CartItem from "./CartItem";
-const Cart = ({CartItems, Products, onAddItem, onRemoveItem}) => {
+import CartOverview from "./CartOverview";
+import CheckOut from "./CheckOut";
+const Cart = ({ CartItems, Products, onAddItem, onRemoveItem, backToItems,isCartSelected }) => {
   return (
-    <div className="Cart">
+    <div className={isCartSelected ? "Cart" : "CartSelected"}>
       <h1>Shopping Cart</h1>
       <div className="CartItems">
         <div className="Headers">
@@ -12,19 +14,31 @@ const Cart = ({CartItems, Products, onAddItem, onRemoveItem}) => {
         </div>
         <div>
           <div className="ShoppingCartItems">
-            {(CartItems.length > 0 ? CartItems.map((item)=><CartItem  key={item.id} Item={item} Products={Products} onAddItem={onAddItem} onRemoveItem={onRemoveItem}/>) : <div className="NoCartItem">You currently have no Cart Items</div>)}
+            {CartItems.length > 0 ? (
+              CartItems.map((item) => (
+                <CartItem
+                  key={item.id}
+                  Item={item}
+                  Products={Products}
+                  onAddItem={onAddItem}
+                  onRemoveItem={onRemoveItem}
+                />
+              ))
+            ) : (
+              <div className="NoCartItem"></div>
+            )}
           </div>
           <div className="CartOverView">
-          {(CartItems.lenght > 0 && <h2>Overview here</h2>)}
-            
+            {CartItems.length > 0 && (
+              <CartOverview CartItems={CartItems} Products={Products} />
+            )}
           </div>
           <div className="CheckOut">
-            <span>Continue Shopping</span>
-            {(CartItems.length > 0 && <button>Checkout</button>)}
+            <CheckOut Products={Products} CartItems={CartItems} backToItems={backToItems} isCartSelected={isCartSelected} />
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   );
 };
 

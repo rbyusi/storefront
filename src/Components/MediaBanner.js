@@ -1,6 +1,6 @@
-const MediaBanner = ({ isItemSelected, ViewItem }) => {
+const MediaBanner = ({ isItemSelected, ViewItem, isCartSelected }) => {
   return (
-    <div className={isItemSelected ? "BreadCrumb" : "Banner"}>
+    <div className={isItemSelected ? "BreadCrumb" : isCartSelected ? "CartSelected" : "Banner"}>
       {isItemSelected 
       ? <div><span><h2>Home\Plates\{ViewItem.title}</h2></span></div>
       

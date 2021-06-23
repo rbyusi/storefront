@@ -1,4 +1,4 @@
-const Header = ({CartItems, backToItems}) => {
+const Header = ({CartItems, backToItems, toggleViewCart}) => {
   const itemNumber = CartItems.reduce((a,v) =>a = a + v.quantity ,0)
   return (
     <div className="Header">
@@ -13,7 +13,7 @@ const Header = ({CartItems, backToItems}) => {
           <li>More</li>
         </ul>
       </span>
-      <span id="Cart">{`My Cart (${itemNumber})`}</span>
+      <span id="Cart" onClick={()=>toggleViewCart()}>{`My Cart (${itemNumber})`}</span>
     </div>
   );
 };

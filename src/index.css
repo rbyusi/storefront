@@ -102,6 +102,8 @@ body {
   align-items: center;
   justify-items: center;
   flex-direction: column;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .Header {
@@ -112,8 +114,10 @@ body {
   border-style: solid none none none;
   border-color: rgb(172, 169, 169);
   border-width: 3rem;
-  width: 1600px;
+  min-width: 1600px;
 }
+
+
 
 .Header ul {
   text-decoration: none;
@@ -182,6 +186,11 @@ body {
 
 #Cart {
   padding-right: 0.86em;
+  cursor: pointer;
+}
+
+#Cart:hover{
+  color: #3f413f;
 }
 
 #Items {
@@ -190,14 +199,14 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 60px;
-  width: 1100px;
+  max-width: 1100px;
 }
 
 #ViewItem {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
-  width: 1100px;
+  max-width: 1100px;
   height: 100%;
   text-align: center;
 }
@@ -276,26 +285,6 @@ body {
   position: relative;
 }
 
-#Quantity {
-  position: relative;
-  margin-top: 0.5em;
-  width: 80px;
-  height: 100%;
-}
-#Quantity button {
-  position: absolute;
-  left: 80px;
-  font-size: 13px;
-}
-
-#Count {
-  position: absolute;
-  padding: 15px 15px;
-  font-size: 16px;
-  background-color: rgb(209, 208, 208);
-  margin: 0;
-  display: inline-block;
-}
 
 .Cart {
   display: flex;
@@ -303,20 +292,26 @@ body {
   flex-direction: column;
 }
 
+.Cart h1{
+  margin-top: 1em;
+}
+
 .CartItems {
   margin-top: 5em;
-  width: 1100px;
+  min-width: 1100px;
 }
 
 .Headers {
   display: grid;
+  
 }
 
 .Product {
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
+  padding-left: 3.5em;
 }
 
 .Quantity {
@@ -341,27 +336,141 @@ body {
   grid-row-end: 3;
 }
 
-.ShoppingCartItems {
+.ShoppingCartItem {
   display: flex;
-  flex-direction: column;
-  margin-top: .5em;
-  
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5em;
+  border-top: rgb(228, 228, 228) solid 0.5px;
+  padding-left: 3.2em;
+  padding-right: 4.2em;
+}
+.ShoppingCartItemFalse{
+  display: none;
 }
 
-.ShoppingCartItems div{
-  border-top: rgb(228, 228, 228) solid .5px;
-  
-}
-.ShoppingCartItems img{
+.ShoppingCartItem img {
   height: 80px;
   width: 120px;
 }
 
-.CartOverView{
+.CartOverView {
+  margin-top: 2em;
   grid-column-start: 1;
   grid-column-end: 7;
 }
-.CheckOut{
+.CheckOut {
   grid-column-start: 1;
   grid-column-end: 7;
+}
+
+.CheckOut h2 {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.ItemImage{
+  display: flex;
+
+}
+
+.ItemImage img{
+  padding: .7em .7em .7em 0;
+}
+
+.ItemImage h2{
+  height: fit-content;
+  padding-bottom: .2em;
+}
+
+.ItemImage div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ItemImage div  h2 {
+  display: inline-block;
+  width: 17.5em;
+}
+
+.CartOverView{
+  display: flex;
+  border-top: rgb(228, 228, 228) solid 0.5px;
+  padding-top:1.5em;
+  flex-direction: row;
+  justify-content: flex-end;
+
+
+}
+
+.CartOverView div:first-child{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  padding-right: 8.5em;
+}
+
+.CartOverView div:last-child{
+  display: flex;
+  text-align: right;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: flex-end;
+  padding-right: 4.7em;
+}
+
+.QuantityContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.QuantityCount{
+  background-color: rgb(212, 212, 212);
+  padding: .7em;
+}
+
+.QuantityButtons{
+  display: flex;
+  flex-direction: column;
+  margin-right: 2em;
+}
+
+.Button {
+  background-color: black;
+  color: white;
+  border-style: unset;
+  padding: .8em;
+  cursor: pointer;
+}
+
+.Button:active{
+  background-color: thistle;
+  transition: ease-in-out;
+}
+
+.CheckOut{
+  display: flex;
+  border-top: rgb(228, 228, 228) solid 0.5px;
+  padding-top: 1em;
+  padding-right: 3em;
+  padding-left:3em;
+  flex-direction: row;
+  margin-top: 3em;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.CartSelected {
+  display: none;
+}
+
+#CartSelected{
+  display:none;
 }

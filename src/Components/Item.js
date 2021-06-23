@@ -1,4 +1,4 @@
-const Item = ({ product, onAddItem, onViewItem, CartItems }) => {
+const Item = ({ product, onAddItem, onViewItem }) => {
   return (
     //image,brand,title,price
     <div className="Item">

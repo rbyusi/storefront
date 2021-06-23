@@ -7,9 +7,10 @@ const Items = ({
   onViewItem,
   isItemSelected,
   ViewItem,
+  isCartSelected
 }) => {
   return (
-    <div id={isItemSelected ? "ViewItem" : "Items"}>
+    <div id={isCartSelected ? "CartSelected" : isItemSelected ? "ViewItem" : "Items"}>
       {isItemSelected ? (
         <SelectedItem
           ViewItem={ViewItem}

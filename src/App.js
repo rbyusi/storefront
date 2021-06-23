@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import MediaBanner from "./Components/MediaBanner";
 import Items from "./Components/Items";
 import Cart from "./Components/Cart";
+import CheckOut from "./Components/CheckOut";
 
 function App() {
   const [Products, setProducts] = useState([]);
@@ -24,8 +25,12 @@ function App() {
   };
 
   const backToItems = () => {
+    console.log("here");
     setItemSelected((v) => false);
+    toggleViewCart();
   };
+
+  const toggleViewCart = () => setIsCartSelected(!isCartSelected);
 
   const onAddItem = (product, bulk = 0) => {
     const itemExists = CartItems.find((item) => item.id === product.id);
@@ -45,10 +50,9 @@ function App() {
 
   const onRemoveItem = (product, remove) => {
     const itemExists = CartItems.find((item) => item.id === product.id);
-    const removeItem = remove ? "yes" : "no"
-    console.log(removeItem)
-    if (itemExists && removeItem==="no"){
-    
+    const removeItem = remove ? "yes" : "no";
+    console.log(removeItem);
+    if (itemExists && removeItem === "no") {
       setCartItems(
         CartItems.map((item) =>
           item.id === product.id
@@ -56,8 +60,8 @@ function App() {
             : item
         )
       );
-    } else if(removeItem==="yes"){
-      console.log("here")
+    } else if (removeItem === "yes") {
+      console.log("here");
       setCartItems(CartItems.filter((item) => item.id !== product.id));
     }
   };
@@ -77,8 +81,9 @@ function App() {
         onRemoveItem={onRemoveItem}
         CartItems={CartItems}
         backToItems={backToItems}
+        toggleViewCart={toggleViewCart}
       />
-      <MediaBanner isItemSelected={isItemSelected} ViewItem={ViewItem} />
+      <MediaBanner isItemSelected={isItemSelected} ViewItem={ViewItem} isCartSelected={isCartSelected}/>
       <Items
         Products={Products}
         CartItems={CartItems}
@@ -86,6 +91,7 @@ function App() {
         onViewItem={onViewItem}
         isItemSelected={isItemSelected}
         ViewItem={ViewItem}
+        isCartSelected={isCartSelected}
       />
       <Cart
         Products={Products}
