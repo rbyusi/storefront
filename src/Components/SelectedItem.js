@@ -1,7 +1,6 @@
 import { useState } from "react";
-const SelectedItem = ({ ViewItem, CartItems, onAddItem }) => {
+const SelectedItem = ({ ViewItem, onAddItem }) => {
   const [quantity, setQuantity] = useState(1);
-  console.log(quantity);
   return (
     <>
       <div>
