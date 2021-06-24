@@ -1,7 +1,7 @@
 const Item = ({ product, onAddItem, onViewItem }) => {
   return (
     //image,brand,title,price
-    <div className="Item">
+    <div className="Item" key={product.id} data-testid={`ProductItem-${product.id}`}>
       <div className="ImageContainer">
         <img src={product.image} alt={product.title}></img>
         <div className="Overlay">

@@ -13,7 +13,7 @@ const Header = ({CartItems, backToItems, toggleViewCart}) => {
           <li>More</li>
         </ul>
       </span>
-      <span id="Cart" onClick={()=>toggleViewCart()}>{`My Cart (${itemNumber})`}</span>
+      <span id="Cart" data-testid="MyCart" onClick={()=>toggleViewCart()}>{`My Cart (${itemNumber})`}</span>
     </div>
   );
 };
