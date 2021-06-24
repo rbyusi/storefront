@@ -3,7 +3,6 @@ import Header from "./Components/Header";
 import MediaBanner from "./Components/MediaBanner";
 import Items from "./Components/Items";
 import Cart from "./Components/Cart";
-import CheckOut from "./Components/CheckOut";
 
 function App() {
   const [Products, setProducts] = useState([]);
@@ -13,7 +12,8 @@ function App() {
   const [ViewItem, setViewItem] = useState();
 
   const fetchProducts = async () => {
-    var url =  process.env.NODE_ENV === "development" ? "http://localhost:5000" : "https://store-front-items.herokuapp.com"
+    console.log(process.env.NODE_ENV)
+    var url =  process.env.NODE_ENV === "development" ?  "http://localhost:5000" : "https://store-front-items.herokuapp.com"
     const res = await fetch(`${url}/products`);
     const data = await res.json();
     
