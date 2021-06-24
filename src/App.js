@@ -13,7 +13,7 @@ function App() {
   const [ViewItem, setViewItem] = useState();
 
   const fetchProducts = async () => {
-    var url = process.env.NODE_ENV === "development" ? "http://localhost:5000" : "https://store-front-items.herokuapp.com"
+    var url =  "https://store-front-items.herokuapp.com"
     const res = await fetch(`${url}/products`);
     const data = await res.json();
     
