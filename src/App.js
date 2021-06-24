@@ -13,9 +13,12 @@ function App() {
   const [ViewItem, setViewItem] = useState();
 
   const fetchProducts = async () => {
-    const res = await fetch("http://localhost:5000/products");
+    var url = process.env.NODE_ENV === "development" ? "http://localhost:5000" : "https://store-front-items.herokuapp.com"
+    const res = await fetch(`${url}/products`);
     const data = await res.json();
+    
     return data;
+    
   };
 
   const onViewItem = (id) => {
