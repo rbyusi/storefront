@@ -1,4 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/react";
+import renderer from 'react-test-renderer'
+
 import App from "../App";
 
 beforeEach(()=>{
@@ -7,6 +9,12 @@ beforeEach(()=>{
 
 afterEach(()=>{
   cleanup();
+})
+
+test("Renders the whole /app component properly",()=>{
+    const app = renderer.create(<App />)
+    let tree = app.toJSON();
+    expect(tree).toMatchSnapshot();
 })
 
 test("Successfuly enders the navbar", () => {

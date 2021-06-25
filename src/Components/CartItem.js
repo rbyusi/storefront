@@ -11,7 +11,7 @@ const CartItem = ({ Item, Products, onAddItem, onRemoveItem }) => {
         </div>
       </span>
       <div className="QuantityContainer">
-        <div className="QuantityCount">{Item.quantity}</div>
+        <div className="QuantityCount"><span data-testid="CartItemTotal">{Item.quantity}</span></div>
         <div className="QuantityButtons">
           <button onClick={() => onAddItem(item)}>+</button>
           <button

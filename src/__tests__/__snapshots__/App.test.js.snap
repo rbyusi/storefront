@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders the whole /app component properly 1`] = `
+<div
+  id="Container"
+>
+  <div
+    className="Header"
+  >
+    <span>
+      <img
+        alt="Hero"
+        src="/Images/logo.png"
+      />
+    </span>
+    <span
+      className="Links"
+    >
+      <ul>
+        <li>
+          Home
+        </li>
+        <li
+          onClick={[Function]}
+        >
+          Shop
+        </li>
+        <li>
+          Journal
+        </li>
+        <li>
+          More
+        </li>
+      </ul>
+    </span>
+    <span
+      data-testid="MyCart"
+      id="Cart"
+      onClick={[Function]}
+    >
+      My Cart (0)
+    </span>
+  </div>
+  <div
+    className="Banner"
+  >
+    <div
+      className="BannerBox"
+    >
+      <h1>
+        Plates
+      </h1>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      </p>
+    </div>
+  </div>
+  <div
+    id="Items"
+  />
+  <div
+    className="CartSelected"
+  >
+    <h1>
+      Shopping Cart
+    </h1>
+    <div
+      className="CartItems"
+    >
+      <div
+        className="Headers"
+      >
+        <div
+          className="Product"
+        >
+          Product
+        </div>
+        <div
+          className="Quantity"
+        >
+          Quantity
+        </div>
+        <div
+          className="Total"
+        >
+          Total
+        </div>
+        <div
+          className="Action"
+        >
+          Action
+        </div>
+      </div>
+      <div>
+        <div
+          className="ShoppingCartItems"
+        >
+          <div
+            className="NoCartItem"
+          />
+        </div>
+        <div
+          className="CartOverView"
+        />
+        <div
+          className="CheckOut"
+        >
+          <h2
+            onClick={[Function]}
+          >
+            Continue Shopping
+          </h2>
+           
+          <div />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

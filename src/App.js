@@ -12,13 +12,14 @@ function App() {
   const [ViewItem, setViewItem] = useState();
 
   const fetchProducts = async () => {
-    console.log(process.env.NODE_ENV)
-    var url =  process.env.NODE_ENV === "development" ?  "http://localhost:5000" : "https://store-front-items.herokuapp.com"
+    var url =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:5000"
+        : "https://store-front-items.herokuapp.com";
+
     const res = await fetch(`${url}/products`);
     const data = await res.json();
-    
     return data;
-    
   };
 
   const onViewItem = (id) => {
@@ -83,7 +84,11 @@ function App() {
         backToItems={backToItems}
         toggleViewCart={toggleViewCart}
       />
-      <MediaBanner isItemSelected={isItemSelected} ViewItem={ViewItem} isCartSelected={isCartSelected}/>
+      <MediaBanner
+        isItemSelected={isItemSelected}
+        ViewItem={ViewItem}
+        isCartSelected={isCartSelected}
+      />
       <Items
         Products={Products}
         CartItems={CartItems}

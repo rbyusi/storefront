@@ -1,6 +1,5 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import Item from "../Components/Item";
-import { useState } from "react";
 
 afterEach(() => {
   cleanup();
@@ -16,6 +15,17 @@ const product = {
   image: "/Images/blue-stripe-stoneware-plate.jpg",
 };
 
+const onAddItem = jest.fn()
+const AddItem = () => {
+  onAddItem.mockReturnValue(product)
+  return (
+    <div>
+      <button onClick={() => onAddItem(product)}>Add to Cart</button>
+    </div>
+  );
+ 
+};
+
 test("Successfully renders ShoppingItems", () => {
   render(<Item product={product} />);
   const image = screen.getByAltText(/Blue Stripe Stoneware Plate/);
@@ -24,4 +34,12 @@ test("Successfully renders ShoppingItems", () => {
   expect(image).toBeInTheDocument();
   expect(AddToCartButton).toBeInTheDocument();
   expect(ViewDetailsButton).toBeInTheDocument();
+});
+
+
+test("Add to Cart button's function is being called when clicked", ()=>{
+  render(<AddItem />)
+  const addButton = screen.getByText(/Add to Cart/)
+  addButton.click();
+  expect(onAddItem.mock.calls.length).toEqual(1);
 });
